@@ -646,7 +646,8 @@ def main(users, action=False):
             if success_list is not None and sum(success_list) < today_reservation_num:
                 seat_offset = 1
                 for i, user in enumerate(users):
-                    if not success_list[i] and original_seatids[i] is not None:
+                    if not success_list[i] and original_seatids[i] is not None \
+                            and current_dayofweek in user.get("daysofweek", []):
                         new_seat = _format_seat_number(original_seatids[i] + seat_offset)
                         user["seatid"] = [new_seat]
                         logging.info(
@@ -667,7 +668,8 @@ def main(users, action=False):
             if success_list is not None and sum(success_list) < today_reservation_num:
                 seat_offset += 1
                 for i, user in enumerate(users):
-                    if not success_list[i] and original_seatids[i] is not None:
+                    if not success_list[i] and original_seatids[i] is not None \
+                            and current_dayofweek in user.get("daysofweek", []):
                         new_seat = _format_seat_number(original_seatids[i] + seat_offset)
                         user["seatid"] = [new_seat]
                         logging.info(
