@@ -65,7 +65,7 @@ ENDTIME = "20:00:40"  # 根据学校的预约座位时间+1min即可
 
 ENABLE_SLIDER = False  # 是否有滑块验证（调试阶段先关闭）
 ENABLE_TEXTCLICK = False  # 是否有选字验证码（需要图灵云打码平台）
-MAX_ATTEMPT = 100  # 最大尝试次数（减少到30次，确保3个配置都能尝试）
+MAX_ATTEMPT = 160  # 最大尝试次数（减少到30次，确保3个配置都能尝试）
 RESERVE_NEXT_DAY = True  # 预约明天而不是今天的
 
 
